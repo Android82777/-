@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script>try{var t=localStorage.getItem("ms_theme");if(t==="dark"||(!t&&matchMedia("(prefers-color-scheme: dark)").matches))document.documentElement.setAttribute("data-theme","dark")}catch(e){}</script>
-<title>Аренда помещений в Москве — MoscSpace</title>
-<meta name="description" content="Аренда офисов, складов, торговых помещений и залов для встреч в Москве — MoscSpace">
+<title>Аренда помещений в Москве — MosSpace</title>
+<meta name="description" content="Аренда офисов, складов, торговых помещений и залов для встреч в Москве — MosSpace">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23262626'/%3E%3Ctext x='16' y='22' font-size='16' text-anchor='middle' fill='%23fff' font-family='Arial'%3EM%3C/text%3E%3C/svg%3E">
 <style>
 /* required styles */
@@ -670,7 +670,7 @@ svg.leaflet-image-layer.leaflet-interactive path {
 		}
 	}
 
-/* MoscSpace — общий стиль всех страниц */
+/* MosSpace — общий стиль всех страниц */
 :root {
   --dark: #262626;
   --darker: #1b1b1b;
@@ -972,7 +972,9 @@ p { margin: 0 0 1em; }
 
 /* ---------- подвал ---------- */
 .site-footer { background: #1b1b1b; color: #ddd; padding: 50px 0 30px; font-size: 14px; }
-.site-footer .cols { display: grid; grid-template-columns: 1.3fr 1fr 1fr 1fr; gap: 30px; }
+.site-footer .cols { display: grid; grid-template-columns: 1fr 1fr 1fr 1.3fr; gap: 30px; }
+.site-footer a.ct { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+.site-footer a.ct svg { flex: none; }
 .site-footer h4 { color: #fff; font-size: 15px; margin-bottom: 12px; }
 .site-footer a { display: block; text-decoration: none; opacity: .8; margin-bottom: 6px; }
 .site-footer a:hover { opacity: 1; }
@@ -1049,6 +1051,65 @@ section[id] { scroll-margin-top: 130px; }
   --dark: #1e1f23; --darker: #141518; --btn: #e9e6dc;
   --glass: rgba(30,31,36,.55); --glass-line: rgba(255,255,255,.12); --neon: #8f7dff;
 }
+/* =====================================================================
+   СВЕТЛАЯ ТЕМА — мягкая тёплая палитра (тёмная тема не затронута)
+   ===================================================================== */
+:root:not([data-theme="dark"]) {
+  --bg: #f1eee6; --surface: #faf8f2; --surface-2: #e5e1d6; --fg: #2b2924; --border: #dcd7ca;
+  --text: #2b2924; --muted: #6f6a5e; --line: #d6d1c3;
+  --light: rgba(255,255,255,.42); --cream: rgba(255,251,238,.55); --paper: rgba(225,219,205,.5); --btn: #e6e1d3;
+  --dark: #2d2c29; --darker: #201f1d;
+  --accent: #b3c85c; --yellow: #ebdf94; --blue: #4a72c8; --green: #62904a;
+}
+:root:not([data-theme="dark"]) .site-header { background: #f8f6f0; border-bottom-color: #e2ddd0; }
+:root:not([data-theme="dark"]) .main-nav { border-top-color: #e2ddd0; }
+:root:not([data-theme="dark"]) .main-nav a { color: #3d3a33; }
+:root:not([data-theme="dark"]) .card, :root:not([data-theme="dark"]) .filters, :root:not([data-theme="dark"]) .listing, :root:not([data-theme="dark"]) .calc-form, :root:not([data-theme="dark"]) .map-popup, :root:not([data-theme="dark"]) .msg.bot, :root:not([data-theme="dark"]) .chip { background: var(--surface); }
+:root:not([data-theme="dark"]) .light .notice, :root:not([data-theme="dark"]) .cream .notice, :root:not([data-theme="dark"]) .paper .notice { background: var(--surface); border-color: #cfc9ba; }
+:root:not([data-theme="dark"]) .input { background: #f7f5ee; border-color: #d3cdbd; }
+:root:not([data-theme="dark"]) .dark .input, :root:not([data-theme="dark"]) .darker .input { background: #eeebe1; }
+:root:not([data-theme="dark"]) .account-link { border-color: #3a372f; }
+:root:not([data-theme="dark"]) .theme-toggle { background: #f1eee6; }
+
+/* --- светлая тема: мягкая подсветка (аврора, стекло, свечение) --- */
+:root:not([data-theme="dark"]) body {
+  background:
+    radial-gradient(900px 560px at 6% -4%, rgba(143,125,255,.20), transparent 62%),
+    radial-gradient(800px 520px at 100% 8%, rgba(25,199,160,.16), transparent 62%),
+    radial-gradient(900px 600px at 55% 102%, rgba(255,176,120,.18), transparent 62%),
+    var(--bg);
+  background-attachment: fixed;
+}
+:root:not([data-theme="dark"]) .site-header {
+  background: rgba(249,247,241,.78);
+  -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
+  box-shadow: 0 1px 0 rgba(108,92,255,.10), 0 8px 24px rgba(108,92,255,.06);
+}
+:root:not([data-theme="dark"]) .card, :root:not([data-theme="dark"]) .filters, :root:not([data-theme="dark"]) .listing, :root:not([data-theme="dark"]) .calc-form {
+  border: 1px solid rgba(108,92,255,.10);
+  box-shadow: 0 1px 0 rgba(255,255,255,.9) inset, 0 10px 30px rgba(108,92,255,.08);
+}
+:root:not([data-theme="dark"]) .listing { transition: transform .25s, box-shadow .25s, border-color .25s; }
+:root:not([data-theme="dark"]) .listing:hover {
+  transform: translateY(-4px);
+  border-color: rgba(143,125,255,.45);
+  box-shadow: 0 16px 44px rgba(108,92,255,.20), 0 0 0 3px rgba(143,125,255,.10);
+}
+:root:not([data-theme="dark"]) .btn.black {
+  background: linear-gradient(135deg, #5f4fd8, #8b64e6);
+  color: #fff;
+  box-shadow: 0 6px 20px rgba(108,92,255,.32);
+}
+:root:not([data-theme="dark"]) .btn.black:hover { box-shadow: 0 10px 28px rgba(108,92,255,.45); }
+:root:not([data-theme="dark"]) .input:focus { border-color: #8f7dff; box-shadow: 0 0 0 3px rgba(143,125,255,.20), 0 0 18px rgba(143,125,255,.18); }
+:root:not([data-theme="dark"]) .account-link { border-color: rgba(95,79,216,.55); color: #3a2f8f; transition: box-shadow .2s, background .2s; }
+:root:not([data-theme="dark"]) .account-link:hover { background: rgba(143,125,255,.10); box-shadow: 0 0 16px rgba(143,125,255,.35); }
+:root:not([data-theme="dark"]) .main-nav a:hover, :root:not([data-theme="dark"]) .main-nav a.active { color: #4a3bc0; }
+:root:not([data-theme="dark"]) .chip.active { background: linear-gradient(135deg, #5f4fd8, #8b64e6); border-color: transparent; color: #fff; box-shadow: 0 4px 14px rgba(108,92,255,.3); }
+:root:not([data-theme="dark"]) .glass-card { background: rgba(255,255,255,.58); border-color: rgba(143,125,255,.22); box-shadow: 0 10px 36px rgba(108,92,255,.10); }
+:root:not([data-theme="dark"]) .theme-toggle { box-shadow: 0 0 0 1px rgba(143,125,255,.25), 0 0 14px rgba(143,125,255,.18); }
+@media (max-width: 960px) { :root:not([data-theme="dark"]) .main-nav a { border-top-color: #e2ddd0; } }
+
 body { background: var(--bg); color: var(--fg); transition: background .25s, color .25s; }
 [data-theme="dark"] .site-header { background: #141518; border-bottom-color: #26282d; }
 [data-theme="dark"] .main-nav { border-top-color: #26282d; }
@@ -1191,7 +1252,7 @@ body { background: var(--bg); color: var(--fg); transition: background .25s, col
 .price3 .btn { align-self: flex-start; }
 
 /* =====================================================================
-   Окно MoscSpace ID (вход / регистрация)
+   Окно MosSpace ID (вход / регистрация)
    ===================================================================== */
 .modal { position: fixed; inset: 0; z-index: 1000; display: grid; place-items: center; padding: max(16px, env(safe-area-inset-top, 0px)) max(16px, env(safe-area-inset-right, 0px)) max(16px, env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px)); visibility: hidden; pointer-events: none; }
 .modal.open { visibility: visible; pointer-events: auto; }
@@ -1453,7 +1514,7 @@ body.modal-lock { overflow: hidden; }
 <body>
 <header class="site-header">
   <div class="wrap">
-    <a class="logo" href="#/index">MoscSpace</a>
+    <a class="logo" href="#/index">MosSpace</a>
     <button class="burger" type="button" aria-label="Меню" aria-expanded="false"><span></span><span></span><span></span></button>
     <nav class="main-nav"><a href="#/index">Главная</a><a href="#/offers">Спецпредложения</a><a href="#/map">Карта и AI-помощник</a><a href="#/articles">Статьи</a><a href="#/terms">Условия аренды</a><a href="#/subscriptions">Подписки</a><a href="#/about">О нас</a></nav>
     <div class="header-contacts">
@@ -1468,21 +1529,21 @@ body.modal-lock { overflow: hidden; }
 <footer class="site-footer">
   <div class="wrap">
     <div class="cols">
-      <div><h4>MoscSpace</h4><p>Офисы, склады, торговые помещения, залы и студии подкастов в Москве — на час или на год.</p><a href="tel:89997655467">8 999 - 765 - 54 - 67</a><a href="mailto:rubinslava123@gmail.com">rubinslava123@gmail.com</a><a href="#/map">Тверская, 21, Москва</a></div>
-      <div><h4>Аренда</h4><a href="#/office">Офис в центре</a><a href="#/discount">−20% от 6 месяцев</a><a href="#/halls">Залы для встреч</a><a href="#/warehouses">Складские помещения</a><a href="#/index/search?type=podcast">Студии подкастов</a><a href="#/index/search">Подбор помещения</a></div>
+      <div><h4>Аренда</h4><a href="#/office">Офис в центре</a><a href="#/discount">−20% на длительную аренду</a><a href="#/halls">Залы для встреч</a><a href="#/warehouses">Складские помещения</a><a href="#/index/search?type=podcast">Студии подкастов</a><a href="#/index/search">Подбор помещения</a></div>
       <div><h4>Полезное</h4><a href="#/articles">Статьи</a><a href="#/terms">Условия аренды</a><a href="#/map">Карта и AI-помощник</a><a href="#/subscriptions">Подписки</a></div>
       <div><h4>Аккаунт</h4><a href="#/account" data-auth="register">Регистрация</a><a href="#/account">Личный кабинет</a><a href="#/about">О нас</a><a href="#/privacy">Политика конфиденциальности</a></div>
+      <div class="contacts-col"><h4>Контакты</h4><a class="ct" href="https://t.me/mosspace_msk" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#2AABEE"/><path fill="#fff" d="M5.4 11.8l11.6-4.5c.5-.2 1 .1.8.9l-2 9.3c-.1.7-.5.8-1.1.5l-3-2.2-1.5 1.4c-.2.2-.3.3-.6.3l.2-3.1 5.6-5c.2-.2-.1-.3-.4-.1l-6.9 4.3-3-.9c-.6-.2-.6-.6.2-.9z"/></svg><span>@mosspace_msk</span></a><a class="ct" href="https://max.ru/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><defs><linearGradient id="maxg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2CB5FF"/><stop offset="1" stop-color="#7B3FF2"/></linearGradient></defs><rect width="24" height="24" rx="7" fill="url(#maxg)"/><path fill="#fff" d="M12 5.2c-3.7 0-6.6 2.8-6.6 6.4 0 1.3.4 2.5 1.1 3.5-.1.9-.5 1.9-1 2.6 1.3.1 2.4-.3 3.2-.9.9.4 2 .6 3.3.6 3.7 0 6.6-2.8 6.6-6.4S15.700 5.200 12 5.200z"/><path fill="url(#maxg)" d="M8.900 14V9.600h1.100l2 2.700 2-2.700h1.100V14h-1.200v-2.600l-1.900 2.500-1.900-2.500V14z"/></svg><span>8 999 - 765 - 54 - 67</span></a><a href="tel:89997655467">8 999 - 765 - 54 - 67</a><a href="mailto:rubinslava123@gmail.com">rubinslava123@gmail.com</a></div>
     </div>
-    <div class="copy">© 2026 MoscSpace. Учебный проект: бронирования и оплаты демонстрационные, деньги не списываются.</div>
+    <div class="copy">© 2026 MosSpace. Учебный проект: бронирования и оплаты демонстрационные, деньги не списываются.</div>
   </div>
 </footer>
-<template data-page="about" data-title="О нас — MoscSpace">
+<template data-page="about" data-title="О нас — MosSpace">
 <section class="about">
   <div class="wrap narrow center">
-    <div class="about-logo">MoscSpace</div>
+    <div class="about-logo">MosSpace</div>
     <h1 class="about-title">Новый стандарт аренды пространств в Москве</h1>
     <p class="about-lead">Большинство площадок аренды — это разрозненные базы объявлений. Там нужно самому искать владельца, отдельно нанимать юристов для проверки документов, а после въезда искать сторонние компании для уборки и обслуживания. Всё разбросано по разным местам и отнимает недели вашего времени.</p>
-    <p class="about-accent">MoscSpace меняет правила игры. Мы создали единый сервис «All-in-One» — всё включено.</p>
+    <p class="about-accent">MosSpace меняет правила игры. Мы создали единый сервис «All-in-One» — всё включено.</p>
     <p class="about-lead">Когда вы бронируете пространство у нас, вы платите не просто за квадратные метры. В фиксированную стоимость тарифа уже включены ключевые сервисы:</p>
   </div>
   <div class="wrap">
@@ -1493,17 +1554,17 @@ body.modal-lock { overflow: hidden; }
     </div>
   </div>
   <div class="wrap narrow center">
-    <p class="about-final">MoscSpace берёт рутину мегаполиса на себя, чтобы вы могли сфокусироваться на главном — своей работе, бизнесе или мероприятии.</p>
+    <p class="about-final">MosSpace берёт рутину мегаполиса на себя, чтобы вы могли сфокусироваться на главном — своей работе, бизнесе или мероприятии.</p>
     <div class="btn-row"><a class="btn black" href="#/index/search">Подобрать помещение</a><a class="btn outline" href="#/map">Открыть карту</a></div>
     <p class="about-contacts">Связаться с нами: <a href="tel:89997655467">8 999 - 765 - 54 - 67</a> · <a href="mailto:rubinslava123@gmail.com">rubinslava123@gmail.com</a></p>
   </div>
 </section>
 </template>
-<template data-page="account" data-title="Личный кабинет — MoscSpace">
+<template data-page="account" data-title="Личный кабинет — MosSpace">
 <section class="dash glass-bg">
   <div class="wrap">
     <div id="account-guest" class="hidden dash-guest glass-card">
-      <div class="id-logo">MoscSpace <b>ID</b></div>
+      <div class="id-logo">MosSpace <b>ID</b></div>
       <p>Войдите, чтобы увидеть брони, документы и цифровой ключ.</p>
       <a class="btn neon-btn" href="#/account" data-auth="login">Войти или зарегистрироваться</a>
     </div>
@@ -1559,7 +1620,7 @@ body.modal-lock { overflow: hidden; }
   <form class="chat-form" id="cc-form"><input class="input" name="q" placeholder="Сообщение…" autocomplete="off" aria-label="Сообщение консьержу"><button class="send-btn" type="submit" aria-label="Отправить"><svg viewBox="0 0 24 24"><path d="M3 11l18-8-8 18-2-8z"/></svg></button></form>
 </div>
 </template>
-<template data-page="article-engineering" data-title="Чек-лист: инженерные сети производственного помещения — MoscSpace">
+<template data-page="article-engineering" data-title="Чек-лист: инженерные сети производственного помещения — MosSpace">
 <div class="slider">
   <div class="slide bg-sky"><div class="wrap"><h1>Вентиляция и отопление</h1><p>Проверьте работоспособность вытяжных систем и эффективность отопительных приборов для поддержания микроклимата.</p><a class="btn accent" href="#vent">Узнать</a></div></div>
   <div class="slide bg-water"><div class="wrap"><h1>Системы водоснабжения</h1><p>Оцените давление в системе и наличие необходимых точек подключения для нужд вашего технологического процесса.</p><a class="btn accent" href="#water">Узнать больше</a></div></div>
@@ -1612,7 +1673,7 @@ body.modal-lock { overflow: hidden; }
   </div>
 </section>
 </template>
-<template data-page="article-market" data-title="Обзор рынка коммерческой недвижимости Москвы 2026 — MoscSpace">
+<template data-page="article-market" data-title="Обзор рынка коммерческой недвижимости Москвы 2026 — MosSpace">
 <section class="hero bg-glass">
   <div class="wrap">
     <h1 style="font-size:clamp(28px,4.4vw,48px)">Обзор рынка коммерческой недвижимости Москвы 2026: почему почасовая аренда выгоднее классической</h1>
@@ -1648,7 +1709,7 @@ body.modal-lock { overflow: hidden; }
   </div>
 </section>
 </template>
-<template data-page="article-shop" data-title="Как выбрать помещение для магазина — MoscSpace">
+<template data-page="article-shop" data-title="Как выбрать помещение для магазина — MosSpace">
 <section class="hero center bg-classic">
   <div class="wrap"><h1 style="text-transform:uppercase">Как выбрать идеальное помещение для магазина в Москве: гайд для брендов</h1></div>
 </section>
@@ -1677,7 +1738,7 @@ body.modal-lock { overflow: hidden; }
   </div>
 </section>
 </template>
-<template data-page="articles" data-title="Статьи — MoscSpace">
+<template data-page="articles" data-title="Статьи — MosSpace">
 <section class="section dark">
   <div class="wrap">
     <h1 class="center" style="font-size:clamp(28px,4vw,42px)">Статьи</h1>
@@ -1689,7 +1750,7 @@ body.modal-lock { overflow: hidden; }
   </div>
 </section>
 </template>
-<template data-page="booking" data-title="Бронирование помещения — MoscSpace">
+<template data-page="booking" data-title="Бронирование помещения — MosSpace">
 <section class="section light booking">
   <div class="wrap">
     <h1 class="booking-title">Бронирование</h1>
@@ -1739,7 +1800,7 @@ body.modal-lock { overflow: hidden; }
   </div>
 </section>
 </template>
-<template data-page="discount" data-title="Скидка на долгосрочную аренду — MoscSpace">
+<template data-page="discount" data-title="Скидка на долгосрочную аренду — MosSpace">
 <section class="hero bg-moscow">
   <div class="wrap">
     <h1>−20% на аренду от 6 месяцев</h1>
@@ -1765,7 +1826,7 @@ body.modal-lock { overflow: hidden; }
   </div>
 </section>
 </template>
-<template data-page="halls" data-title="Аренда залов для встреч — MoscSpace">
+<template data-page="halls" data-title="Аренда залов для встреч — MosSpace">
 <section class="section cream">
   <div class="wrap center">
     <h1 style="font-size:clamp(28px,4vw,44px)">Аренда залов для встреч</h1>
@@ -1816,7 +1877,7 @@ body.modal-lock { overflow: hidden; }
   </div>
 </section>
 </template>
-<template data-page="index" data-title="Аренда помещений в Москве — MoscSpace">
+<template data-page="index" data-title="Аренда помещений в Москве — MosSpace">
 <section class="hero bg-moscow first-screen">
   <div class="wrap">
     <h1>Ваш офис, склад или студия — за 5&nbsp;минут</h1>
@@ -1878,7 +1939,7 @@ body.modal-lock { overflow: hidden; }
   </div>
 </section>
 </template>
-<template data-page="map" data-title="Карта и AI-помощник — MoscSpace">
+<template data-page="map" data-title="Карта и AI-помощник — MosSpace">
 <div class="map-layout">
   <div class="map-box" id="map-box">
     <div id="leaflet-map" role="application" aria-label="Карта Москвы со свободными помещениями"></div>
@@ -1887,7 +1948,7 @@ body.modal-lock { overflow: hidden; }
     <div class="map-note hidden" id="map-note">Карта-подложка не загрузилась. Откройте сайт с хостинга (например, Netlify) — там будет полная карта Москвы.</div>
   </div>
   <div class="assistant">
-    <div class="chat-head"><span class="bot-ava" aria-hidden="true">AI</span><div><h2>AI-помощник MoscSpace</h2><span class="online">онлайн · подбирает за секунды</span></div></div>
+    <div class="chat-head"><span class="bot-ava" aria-hidden="true">AI</span><div><h2>AI-помощник MosSpace</h2><span class="online">онлайн · подбирает за секунды</span></div></div>
     <div class="chips">
       <button class="chip" type="button">Коворкинг на 10 человек</button>
       <button class="chip" type="button">Офис на 10 человек у метро Чкаловская на среду</button>
@@ -1900,7 +1961,7 @@ body.modal-lock { overflow: hidden; }
   </div>
 </div>
 </template>
-<template data-page="offers" data-title="Специальные предложения — MoscSpace">
+<template data-page="offers" data-title="Специальные предложения — MosSpace">
 <section class="section light">
   <div class="wrap">
     <h1 class="center" style="font-size:clamp(28px,4vw,42px)">Специальные предложения</h1>
@@ -1913,7 +1974,7 @@ body.modal-lock { overflow: hidden; }
   </div>
 </section>
 </template>
-<template data-page="office" data-title="Оффер месяца: офис в центре — MoscSpace">
+<template data-page="office" data-title="Оффер месяца: офис в центре — MosSpace">
 <section class="hero center bg-city">
   <div class="wrap">
     <h1>Оффер месяца</h1>
@@ -1944,7 +2005,7 @@ body.modal-lock { overflow: hidden; }
   </div>
 </section>
 </template>
-<template data-page="pay" data-title="Оплата подписки — MoscSpace">
+<template data-page="pay" data-title="Оплата подписки — MosSpace">
 <section class="section dark">
   <div class="wrap center">
     <h1 id="plan-title" style="font-size:clamp(28px,4vw,40px)">Оплата подписки</h1>
@@ -1961,18 +2022,18 @@ body.modal-lock { overflow: hidden; }
   </div>
 </section>
 </template>
-<template data-page="privacy" data-title="Политика конфиденциальности — MoscSpace">
+<template data-page="privacy" data-title="Политика конфиденциальности — MosSpace">
 <section class="section light">
   <div class="wrap narrow">
     <h1 style="font-size:36px">Политика конфиденциальности</h1>
-    <p>Сайт MoscSpace — учебный проект. Данные, которые вы вводите в формы (имя, телефон, email), сохраняются только в вашем браузере (localStorage) и не передаются на сервер.</p>
+    <p>Сайт MosSpace — учебный проект. Данные, которые вы вводите в формы (имя, телефон, email), сохраняются только в вашем браузере (localStorage) и не передаются на сервер.</p>
     <p>Данные банковских карт не сохраняются и никуда не отправляются: оплата на сайте демонстрационная, реальные списания не производятся.</p>
     <p>Удалить все сохранённые данные можно в <a href="#/account">личном кабинете</a> кнопкой «Выйти и удалить данные».</p>
     <p>По вопросам: <a href="mailto:rubinslava123@gmail.com">rubinslava123@gmail.com</a>, 8 999 - 765 - 54 - 67.</p>
   </div>
 </section>
 </template>
-<template data-page="subscriptions" data-title="Подписки — MoscSpace">
+<template data-page="subscriptions" data-title="Подписки — MosSpace">
 <section class="section tariffs-page">
   <div class="wrap">
     <h1 class="center tariffs-title">Тарифы</h1>
@@ -2015,7 +2076,7 @@ body.modal-lock { overflow: hidden; }
   </div>
 </section>
 </template>
-<template data-page="terms" data-title="Условия аренды — MoscSpace">
+<template data-page="terms" data-title="Условия аренды — MosSpace">
 <section class="section dark">
   <div class="wrap center">
     <h1 style="font-size:clamp(28px,4vw,42px)">Условия аренды</h1>
@@ -2039,7 +2100,7 @@ body.modal-lock { overflow: hidden; }
   </div>
 </section>
 </template>
-<template data-page="warehouses" data-title="Аренда складских помещений — MoscSpace">
+<template data-page="warehouses" data-title="Аренда складских помещений — MosSpace">
 <section class="hero bg-warehouse">
   <div class="wrap">
     <h1>Аренда складских помещений в Москве</h1>
@@ -4397,7 +4458,7 @@ var qrcode = function() {
 
 </script>
 <script>
-// MoscSpace — вся логика сайта: меню, формы, поиск, карта, AI-помощник, оплата.
+// MosSpace — вся логика сайта: меню, формы, поиск, карта, AI-помощник, оплата.
 // Сайт статический: данные пользователя и брони хранятся только в браузере (localStorage).
 // Данные банковских карт никуда не отправляются и не сохраняются — оплата демонстрационная.
 (function () {
@@ -4692,7 +4753,7 @@ var qrcode = function() {
 
   // ---------- формы ----------
   var handlers = {
-    // регистрация в окне MoscSpace ID
+    // регистрация в окне MosSpace ID
     register: function (form) {
       var u = { name: form.fio.value.trim(), email: form.email.value.trim().toLowerCase(), phone: "+7 " + form.phone.value.trim(), since: new Date().toISOString() };
       var list = accounts().filter(function (a) { return a.email !== u.email; });
@@ -4765,7 +4826,7 @@ var qrcode = function() {
     }
   };
 
-  // ---------- окно MoscSpace ID (вход и регистрация) ----------
+  // ---------- окно MosSpace ID (вход и регистрация) ----------
   var authNext = null;
   function signIn(u, message) {
     store.set("user", u);
@@ -4785,7 +4846,7 @@ var qrcode = function() {
     return "<div class='modal-backdrop' data-close></div>" +
       "<div class='modal-panel' role='dialog' aria-modal='true' aria-labelledby='auth-title'>" +
       "<button class='modal-close' type='button' data-close aria-label='Закрыть'>×</button>" +
-      "<div class='id-logo' id='auth-title'>MoscSpace <b>ID</b></div>" +
+      "<div class='id-logo' id='auth-title'>MosSpace <b>ID</b></div>" +
       "<p class='id-sub'>Один аккаунт для броней, документов и цифровых ключей</p>" +
       "<div class='auth-tabs' role='tablist'><button type='button' role='tab' data-tab='login'>Вход</button><button type='button' role='tab' data-tab='register'>Регистрация</button></div>" +
       "<form class='auth-form' data-form='login' data-pane='login'>" +
@@ -5091,7 +5152,7 @@ var qrcode = function() {
     var g = c.getContext("2d");
     g.fillStyle = "#fff"; g.fillRect(0, 0, W, H);
     g.save(); g.translate(W / 2, H / 2); g.rotate(-Math.PI / 6); g.fillStyle = "rgba(108,92,255,.07)"; g.font = "bold 120px Arial, sans-serif"; g.textAlign = "center"; g.fillText("ОБРАЗЕЦ · ДЕМО", 0, 0); g.restore();
-    g.fillStyle = "#6c5cff"; g.font = "bold 30px Arial, sans-serif"; g.fillText("MoscSpace", x, 90);
+    g.fillStyle = "#6c5cff"; g.font = "bold 30px Arial, sans-serif"; g.fillText("MosSpace", x, 90);
     g.fillStyle = "#888"; g.font = "22px Arial, sans-serif"; g.textAlign = "right"; g.fillText("Сформировано в личном кабинете " + new Date().toLocaleDateString("ru-RU"), W - x, 90); g.textAlign = "left";
     g.fillStyle = "#111"; g.font = "bold 40px Arial, sans-serif"; g.fillText(title, x, y + 40);
     g.font = "26px Arial, sans-serif"; g.fillStyle = "#555"; g.fillText(subtitle, x, y + 84);
@@ -5114,7 +5175,7 @@ var qrcode = function() {
     g.strokeStyle = "#999"; g.lineWidth = 2;
     g.beginPath(); g.moveTo(x, y + 60); g.lineTo(x + 420, y + 60); g.moveTo(W - x - 420, y + 60); g.lineTo(W - x, y + 60); g.stroke();
     g.fillStyle = "#555"; g.font = "22px Arial, sans-serif"; g.fillText("Арендодатель", x, y + 95); g.fillText("Арендатор", W - x - 420, y + 95);
-    g.fillStyle = "#999"; g.font = "20px Arial, sans-serif"; g.fillText("Учебный проект MoscSpace: документ сформирован автоматически и не имеет юридической силы.", x, H - 70);
+    g.fillStyle = "#999"; g.font = "20px Arial, sans-serif"; g.fillText("Учебный проект MosSpace: документ сформирован автоматически и не имеет юридической силы.", x, H - 70);
     return c;
   }
   function docFor(b, kind) {
@@ -5128,10 +5189,10 @@ var qrcode = function() {
     ]);
     var tenant = kind === "legal" ? "Арендатор: ООО «__________», ИНН __________, ОГРН __________, в лице " + (u.name || b.name || "представителя") + ", действующего на основании устава." : "Арендатор: " + (u.name || b.name || "—") + ", тел. " + (u.phone || b.phone || "—") + ", e-mail " + (u.email || b.email || "—") + ".";
     return drawDoc(kind === "legal" ? "Договор аренды (юридическое лицо)" : "Договор аренды", no + " · г. Москва · " + new Date(b.created).toLocaleDateString("ru-RU"), [
-      ["1. Стороны", "Арендодатель: собственник помещения, действующий через сервис MoscSpace.", tenant],
+      ["1. Стороны", "Арендодатель: собственник помещения, действующий через сервис MosSpace.", tenant],
       ["2. Предмет договора", "Арендодатель передаёт во временное пользование помещение: " + where + "."],
       ["3. Срок аренды", periodText(b) + "."],
-      ["4. Стоимость", "Аренда: " + money2(b.rent) + (b.discounts && b.discounts.length ? " с учётом скидок: " + b.discounts.map(function (d) { return d.label + " −" + Math.round(d.pct * 100) + "%"; }).join(", ") : "") + ".", "Сервисный сбор MoscSpace: " + Math.round((b.feePct || 0) * 100) + "%. Оплачено при бронировании: " + money2(b.paid) + "."],
+      ["4. Стоимость", "Аренда: " + money2(b.rent) + (b.discounts && b.discounts.length ? " с учётом скидок: " + b.discounts.map(function (d) { return d.label + " −" + Math.round(d.pct * 100) + "%"; }).join(", ") : "") + ".", "Сервисный сбор MosSpace: " + Math.round((b.feePct || 0) * 100) + "%. Оплачено при бронировании: " + money2(b.paid) + "."],
       ["5. Доступ и обслуживание", "Доступ в помещение — по цифровому смарт-ключу из личного кабинета. Регулярная уборка включена в стоимость."],
       ["6. Отмена", PLANS[b.plan] && PLANS[b.plan].freeCancel ? "Бесплатная отмена не позднее чем за 24 часа до начала аренды." : "Отмена бронирования — по правилам тарифа в личном кабинете."]
     ]);
@@ -5195,7 +5256,7 @@ var qrcode = function() {
     var qb = $("#qr-box");
     if (window.qrcode) {
       var qr = qrcode(0, "M");
-      qr.addData("https://moscspace.example/key/" + code + "?plan=" + pk);
+      qr.addData("https://mosspace.example/key/" + code + "?plan=" + pk);
       qr.make();
       var n = qr.getModuleCount(), path = "";
       for (var r = 0; r < n; r++) for (var c = 0; c < n; c++) if (qr.isDark(r, c)) path += "M" + c + " " + r + "h1v1h-1z";
@@ -5309,7 +5370,7 @@ var qrcode = function() {
   // консьерж-чат: на «Премиум» — личный менеджер, на «Оптимальном» — быстрый бот
   function openConcierge(pk) {
     var box = $("#concierge"), chat = $("#cc-chat"), form = $("#cc-form");
-    var who = pk === "premium" ? ["Анна, личный менеджер", "отвечает за 1 минуту"] : pk === "optimal" ? ["Быстрый бот MoscSpace", "отвечает мгновенно"] : ["Поддержка MoscSpace", "отвечает в течение 15 минут"];
+    var who = pk === "premium" ? ["Анна, личный менеджер", "отвечает за 1 минуту"] : pk === "optimal" ? ["Быстрый бот MosSpace", "отвечает мгновенно"] : ["Поддержка MosSpace", "отвечает в течение 15 минут"];
     $("#cc-title").textContent = who[0];
     $("#cc-sub").textContent = who[1];
     function say(cls, text) {
