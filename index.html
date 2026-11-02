@@ -1667,6 +1667,113 @@ body.modal-lock { overflow: hidden; }
 [data-theme="dark"] .fab-item .i-phone { stroke: #a99bff; }
 body[data-page=map] .contact-fab, body.modal-lock .contact-fab, body:has(.concierge:not(.hidden)) .contact-fab { display: none; }
 @media (prefers-reduced-motion: reduce) { .fab-btn::after, .acc-card, .view-ok { animation: none; } .fab-item, .fab-btn svg { transition: none; } }
+
+/* ---------- страница помещения ---------- */
+.ip { padding: 28px 0 0; }
+.ip-back { display: inline-flex; align-items: center; gap: 6px; background: none; border: 0; color: inherit; font: inherit; font-size: 15px; cursor: pointer; padding: 6px 0; opacity: .85; margin-bottom: 8px; }
+.ip-back:hover { opacity: 1; }
+.ip-back svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; transition: transform .2s; }
+.ip-back:hover svg { transform: translateX(-3px); }
+.listing.ip-hero { background: transparent; border-radius: 16px; overflow: hidden; }
+.listing.ip-hero .pic { height: 400px; background-size: cover; background-position: center; }
+.ip h1 { font-size: clamp(24px, 3.4vw, 36px); margin: 18px 0 6px; line-height: 1.2; }
+.ip-sub { color: var(--muted); margin: 0 0 18px; display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: 15px; }
+.ip-sub span { display: inline-flex; align-items: center; gap: 6px; }
+.ip-sub svg, .ip-chip svg { width: 17px; height: 17px; fill: none; stroke: currentColor; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; flex: none; }
+.ip-h { font-size: 18px; margin: 26px 0 12px; }
+.ip-specs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.ip-spec { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 12px 14px; }
+.ip-spec small { display: block; color: var(--muted); font-size: 13px; margin-bottom: 2px; }
+.ip-spec b { font-size: 17px; font-weight: 600; }
+.ip-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.ip-chip { display: inline-flex; align-items: center; gap: 7px; border: 1px solid var(--border); background: var(--surface); border-radius: 20px; padding: 7px 14px; font-size: 14px; }
+.ip-chip svg { color: #12a57a; }
+.ip-side { position: sticky; top: 96px; display: flex; flex-direction: column; gap: 14px; }
+.ip-card { background: var(--surface); color: var(--text); border: 1px solid var(--border); border-radius: 16px; padding: 22px; box-shadow: 0 8px 30px rgba(60,50,120,.08); }
+.ip-price { font-size: 30px; font-weight: 700; line-height: 1.1; }
+.ip-price small { font-size: 16px; font-weight: 400; color: var(--muted); }
+.ip-hour { color: var(--muted); margin: 6px 0 0; font-size: 15px; }
+.ip-actions { display: flex; flex-direction: column; gap: 10px; margin-top: 18px; }
+.ip-actions .btn { width: 100%; text-align: center; justify-content: center; box-sizing: border-box; }
+.ip-actions .view-btn { margin-top: 0; }
+.ip-note { font-size: 13px; color: var(--muted); margin: 14px 0 0; display: flex; gap: 8px; align-items: flex-start; }
+.ip-note svg { width: 17px; height: 17px; flex: none; fill: none; stroke: currentColor; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; margin-top: 1px; }
+.ip-way { display: flex; flex-direction: column; gap: 10px; }
+.ip-way-row { display: flex; align-items: center; gap: 12px; }
+.ip-way-ico { width: 38px; height: 38px; border-radius: 10px; flex: none; display: grid; place-items: center; background: rgba(143,125,255,.14); color: #6c5cff; }
+[data-theme="dark"] .ip-way-ico { color: #b9aeff; }
+.ip-way-ico svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; }
+.ip-way-row b { display: block; font-weight: 600; }
+.ip-way-row span { color: var(--muted); font-size: 14px; }
+.ip-way .btn { margin-top: 6px; }
+.ip-similar { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.ip-sim { display: flex; flex-direction: column; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; color: inherit; text-decoration: none; transition: transform .2s, box-shadow .2s, border-color .2s; }
+.ip-sim:hover { transform: translateY(-3px); border-color: #8f7dff; box-shadow: 0 10px 26px rgba(108,92,255,.18); }
+.ip-sim .pic { height: 120px; background-size: cover; background-position: center; }
+.ip-sim div.b { padding: 12px 14px 14px; }
+.ip-sim h4 { margin: 0 0 4px; font-size: 15px; line-height: 1.3; }
+.ip-sim span { color: var(--muted); font-size: 14px; display: block; }
+.ip-sim b { display: block; margin-top: 6px; font-size: 16px; }
+.ip-missing { text-align: center; padding: 60px 0; }
+.listing .pic { cursor: pointer; }
+.listing.booking-item .pic, .listing.ip-hero .pic { cursor: default; }
+.listing h4 a { color: inherit; text-decoration: none; }
+.listing h4 a:hover { text-decoration: underline; }
+
+.card-open { display: flex; align-items: center; justify-content: center; gap: 9px; width: 100%; box-sizing: border-box; margin-top: 6px; }
+.card-open svg { width: 19px; height: 19px; fill: none; stroke: currentColor; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; flex: none; }
+.card-open .arr { width: 17px; height: 17px; transition: transform .25s; }
+.card-open:hover .arr { transform: translateX(4px); }
+
+.ip-grid { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr); grid-template-rows: auto auto 1fr; grid-template-areas: "hero side" "head side" "info side"; column-gap: 28px; align-items: start; }
+.ip-grid > .ip-hero { grid-area: hero; }
+.ip-head { grid-area: head; }
+.ip-info { grid-area: info; }
+.ip-side { grid-area: side; }
+.ip-actions { display: flex; flex-direction: row; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+.ip-actions .btn, .ip-actions .view-btn { flex: 1 1 130px; width: auto; margin: 0; min-height: 0; height: 42px; padding: 0 12px; font-size: 14px; border-radius: 10px; box-sizing: border-box; text-align: center; display: inline-flex; align-items: center; justify-content: center; gap: 7px; white-space: nowrap; line-height: 1; }
+.ip-sim-title { margin-top: 30px; }
+.ip-top { display: flex; align-items: center; justify-content: space-between; margin: 0 0 12px; }
+.ip-top .ip-back { margin: 0; }
+.ip-x { width: 34px; height: 34px; border-radius: 50%; border: 1px solid var(--border); background: rgba(127,127,140,.12); color: inherit; font-size: 20px; line-height: 1; cursor: pointer; display: grid; place-items: center; transition: background .2s, transform .2s; }
+.ip-x:hover { background: rgba(127,127,140,.28); transform: rotate(90deg); }
+#view-modal { z-index: 1100; }
+#item-modal .modal-panel { max-width: 1000px; padding: 16px 22px 24px; background: rgba(255,255,255,.78); }
+[data-theme="dark"] #item-modal .modal-panel { background: rgba(22,23,28,.76); }
+#item-modal .ip { padding: 0; }
+#item-modal .ip-card { box-shadow: none; background: rgba(255,255,255,.5); }
+[data-theme="dark"] #item-modal .ip-card { background: rgba(255,255,255,.05); }
+#item-modal .ip-spec, #item-modal .ip-chip, #item-modal .ip-sim { background: rgba(255,255,255,.5); }
+[data-theme="dark"] #item-modal .ip-spec, [data-theme="dark"] #item-modal .ip-chip, [data-theme="dark"] #item-modal .ip-sim { background: rgba(255,255,255,.05); }
+#item-modal .ip-side { top: 4px; }
+#item-modal .listing.ip-hero .pic { height: 320px; }
+#item-modal .ip h1 { font-size: clamp(22px, 3vw, 30px); }
+@media (max-width: 900px) {
+  .ip-grid { grid-template-columns: minmax(0, 1fr); grid-template-rows: none; grid-template-areas: "hero" "head" "side" "info"; }
+  .ip-side { position: static; margin-bottom: 4px; }
+  .ip-price { font-size: 26px; }
+  .listing.ip-hero .pic, #item-modal .listing.ip-hero .pic { height: 230px; }
+  .ip-specs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .ip-similar { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .ip-sim:nth-child(3) { display: none; }
+  #item-modal .modal-panel { padding: 12px 14px 20px; border-radius: 20px; }
+}
+
+.ip-dock { display: none; }
+@media (max-width: 900px) {
+  .ip-side .ip-actions { display: none; }
+  .ip-dock { position: sticky; bottom: 6px; z-index: 6; margin-top: 18px; display: flex; align-items: center; gap: 8px; padding: 8px 8px 8px 16px; border-radius: 18px; background: rgba(255,255,255,.74); border: 1px solid rgba(143,125,255,.38); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); box-shadow: 0 8px 26px rgba(60,50,120,.2); animation: dockIn .45s cubic-bezier(.2,.8,.2,1) both; }
+  [data-theme="dark"] .ip-dock { background: rgba(30,31,38,.74); box-shadow: 0 8px 26px rgba(0,0,0,.45); }
+  .ip-dock-price { flex: 1; min-width: 0; line-height: 1.15; }
+  .ip-dock-price b { display: block; font-size: 17px; font-weight: 700; white-space: nowrap; }
+  .ip-dock-price span { font-size: 12px; color: var(--muted); }
+  .ip-dock .btn, .ip-dock .view-btn { height: 40px; margin: 0; padding: 0 16px; border-radius: 12px; font-size: 14px; width: auto; flex: none; box-sizing: border-box; display: inline-flex; align-items: center; justify-content: center; white-space: nowrap; line-height: 1; }
+  .ip-dock .view-btn { width: 40px; padding: 0; }
+  .ip-dock .view-btn svg { width: 20px; height: 20px; }
+  body[data-page=item] .contact-fab { bottom: 84px; }
+}
+@keyframes dockIn { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .ip-dock { animation: none; } }
 </style>
 </head>
 <body>
@@ -2136,6 +2243,11 @@ body[data-page=map] .contact-fab, body.modal-lock .contact-fab, body:has(.concie
     </form>
     <p class="small muted" style="margin-top:22px">Или позвоните: <a href="tel:89997655467">8 999 - 765 - 54 - 67</a> · <a href="mailto:rubinslava123@gmail.com">rubinslava123@gmail.com</a></p>
   </div>
+</section>
+</template>
+<template data-page="item" data-title="Помещение — MosSpace">
+<section class="section light ip">
+  <div class="wrap" id="item-page"></div>
 </section>
 </template>
 <template data-page="map" data-title="Карта и AI-помощник — MosSpace">
@@ -5081,7 +5193,7 @@ var qrcode = function() {
   function closeView() {
     var m = $("#view-modal");
     if (m) m.classList.remove("open");
-    if (!$("#auth-modal.open")) document.body.classList.remove("modal-lock");
+    unlockScroll();
   }
   function openView(id) {
     var item = findItem(id);
@@ -5138,7 +5250,128 @@ var qrcode = function() {
     btn.addEventListener("click", function (e) { e.stopPropagation(); set(!fab.classList.contains("open")); });
     fab.addEventListener("click", function (e) { if (e.target.closest(".fab-item")) set(false); });
     document.addEventListener("click", function (e) { if (!fab.contains(e.target)) set(false); });
-    document.addEventListener("keydown", function (e) { if (e.key === "Escape") { set(false); closeView(); } });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape") { set(false); closeView(); closeItem(); } });
+  }
+
+
+  // ---------- страница помещения ----------
+  var IP_ICONS = {
+    back: "<svg viewBox='0 0 24 24' aria-hidden='true'><path d='M15 6l-6 6l6 6'/></svg>",
+    pin: "<svg viewBox='0 0 24 24' aria-hidden='true'><path d='M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0'/><path d='M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z'/></svg>",
+    metro: "<svg viewBox='0 0 24 24' aria-hidden='true'><path d='M3 17l4 -10l5 7l5 -7l4 10'/></svg>",
+    walk: "<svg viewBox='0 0 24 24' aria-hidden='true'><path d='M13 4m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0'/><path d='M7 21l3 -4'/><path d='M16 21l-2 -4l-3 -3l1 -6'/><path d='M6 12l2 -3l4 -1l3 3l3 1'/></svg>",
+    road: "<svg viewBox='0 0 24 24' aria-hidden='true'><path d='M7 21l3 -18'/><path d='M17 21l-3 -18'/><path d='M12 5v2'/><path d='M12 11v2'/><path d='M12 17v2'/></svg>",
+    check: "<svg viewBox='0 0 24 24' aria-hidden='true'><path d='M5 12l5 5l10 -10'/></svg>",
+    info: "<svg viewBox='0 0 24 24' aria-hidden='true'><path d='M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0'/><path d='M12 9h.01'/><path d='M11 12h1v4h1'/></svg>",
+    cal: "<svg viewBox='0 0 24 24' aria-hidden='true'><path d='M4 7a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z'/><path d='M16 3v4'/><path d='M8 3v4'/><path d='M4 11h16'/></svg>"
+  };
+  function itemFeatures(l) {
+    var f = [];
+    if (l.equip) String(l.equip).split(/[,;]\s*/).forEach(function (x) { if (x) f.push(x.charAt(0).toUpperCase() + x.slice(1)); });
+    if (l.water) f.push("Вода и канализация");
+    if (l.vent) f.push("Вентиляция");
+    if (l.heat) f.push("Отопление");
+    return f;
+  }
+  function itemSimilar(l) {
+    return LISTINGS.filter(function (x) { return x.id !== l.id && x.type === l.type; })
+      .sort(function (a, b) { return Math.abs(a.price - l.price) - Math.abs(b.price - l.price); })
+      .slice(0, 3);
+  }
+  function itemMarkup(l, inModal) {
+    var pic = l.pic || TYPE_PICS[l.type];
+    var specs = [["Площадь", l.area + " м²"]];
+    if (l.people) specs.push(["Вместимость", "до " + l.people + " чел."]);
+    if (l.ceiling) specs.push(["Потолки", String(l.ceiling).replace(".", ",") + " м"]);
+    if (l.power) specs.push(["Мощность", l.power + " кВт"]);
+    if (l.highwayKm != null) specs.push(["До шоссе", String(l.highwayKm).replace(".", ",") + " км"]);
+    specs.push(["Район", l.district]);
+    var feats = itemFeatures(l);
+    var perHour = l.unit !== "час" && l.hourPrice;
+    var sim = itemSimilar(l);
+    var open = inModal ? " data-open-item='" : null;
+    var html =
+      "<div class='ip-grid'>" +
+        "<div class='listing ip-hero'><div class='pic " + pic + "'><span class='tag'>" + TYPES[l.type] + "</span>" + favButton(l.id) + "</div></div>" +
+        "<div class='ip-head'><h1>" + esc(l.title) + "</h1>" +
+        "<p class='ip-sub'><span>" + IP_ICONS.pin + "м. " + esc(l.metro) + ", " + l.metroMin + " мин пешком</span><span>" + IP_ICONS.metro + esc(l.district) + "</span></p></div>" +
+        "<aside class='ip-side'><div class='ip-card'>" +
+          "<div class='ip-price'>" + money(l.price) + " <small>/ " + l.unit + "</small></div>" +
+          (perHour ? "<p class='ip-hour'>или " + money(l.hourPrice) + " / час</p>" : "") +
+          "<div class='ip-actions'><a class='btn black' href='#/booking?item=" + l.id + "'" + (inModal ? " data-close-item" : "") + ">Забронировать</a>" +
+          "<button class='view-btn' type='button' data-view='" + l.id + "'>" + IP_ICONS.cal + "На просмотр</button></div>" +
+          "<p class='ip-note'>" + IP_ICONS.info + "<span>Бронь можно оформить онлайн. Перед этим можно посмотреть помещение вживую.</span></p>" +
+        "</div></aside>" +
+        "<div class='ip-info'>" +
+          "<h2 class='ip-h'>Характеристики</h2><div class='ip-specs'>" + specs.map(function (x) { return "<div class='ip-spec'><small>" + x[0] + "</small><b>" + esc(x[1]) + "</b></div>"; }).join("") + "</div>" +
+          (feats.length ? "<h2 class='ip-h'>Что есть в помещении</h2><div class='ip-chips'>" + feats.map(function (x) { return "<span class='ip-chip'>" + IP_ICONS.check + esc(x) + "</span>"; }).join("") + "</div>" : "") +
+          "<h2 class='ip-h'>Как добраться</h2><div class='ip-card'><div class='ip-way'>" +
+            "<div class='ip-way-row'><div class='ip-way-ico'>" + IP_ICONS.metro + "</div><div><b>м. " + esc(l.metro) + "</b><span>" + esc(l.district) + " административный округ</span></div></div>" +
+            "<div class='ip-way-row'><div class='ip-way-ico'>" + IP_ICONS.walk + "</div><div><b>" + l.metroMin + " мин пешком</b><span>от станции метро</span></div></div>" +
+            (l.highwayKm != null ? "<div class='ip-way-row'><div class='ip-way-ico'>" + IP_ICONS.road + "</div><div><b>" + String(l.highwayKm).replace(".", ",") + " км до шоссе</b><span>удобно для въезда транспорта</span></div></div>" : "") +
+            "<a class='btn outline' href='#/map'" + (inModal ? " data-close-item" : "") + ">Показать на карте</a></div></div>" +
+        "</div>" +
+      "</div>" +
+      (sim.length ? "<h2 class='ip-h ip-sim-title'>Похожие помещения</h2><div class='ip-similar'>" + sim.map(function (x) {
+        return "<a class='ip-sim' href='#/item?id=" + x.id + "'" + (inModal ? " data-open-item='" + x.id + "'" : "") + "><div class='pic " + (x.pic || TYPE_PICS[x.type]) + "'></div><div class='b'><h4>" + esc(x.title) + "</h4><span>м. " + esc(x.metro) + "</span><b>" + money(x.price) + " / " + x.unit + "</b></div></a>";
+      }).join("") + "</div>" : "") +
+      "<div class='ip-dock'><div class='ip-dock-price'><b>" + money(l.price) + "</b><span>за " + (l.unit === "час" ? "час" : "месяц") + "</span></div>" +
+        "<button class='view-btn' type='button' data-view='" + l.id + "' aria-label='Записаться на просмотр' title='Записаться на просмотр'>" + IP_ICONS.cal + "</button>" +
+        "<a class='btn black' href='#/booking?item=" + l.id + "'" + (inModal ? " data-close-item" : "") + ">Забронировать</a></div>";
+    return html;
+  }
+  function initItem() {
+    var box = $("#item-page");
+    if (!box) return;
+    var l = findItem(param("id"));
+    if (!l) {
+      box.innerHTML = "<div class='ip-missing'><h2>Такого помещения нет</h2><p class='muted'>Возможно, ссылка устарела.</p><a class='btn black' href='#/index/search'>Подобрать помещение</a></div>";
+      return;
+    }
+    document.title = l.title + " — MosSpace";
+    box.innerHTML = "<button class='ip-back' type='button' id='ip-back'>" + IP_ICONS.back + "К списку</button>" + itemMarkup(l, false);
+    $("#ip-back").addEventListener("click", function () {
+      if (history.length > 1 && (window.__ipNav || 0) > 0) history.back();
+      else location.hash = "#/index/search";
+    });
+  }
+  window.__ipNav = 0;
+
+  // окно с карточкой помещения поверх текущей страницы
+  function unlockScroll() { if (!$(".modal.open")) document.body.classList.remove("modal-lock"); }
+  function closeItem() {
+    var m = $("#item-modal");
+    if (m) m.classList.remove("open");
+    unlockScroll();
+  }
+  function openItem(id) {
+    var l = findItem(id);
+    if (!l) return;
+    var m = $("#item-modal");
+    if (!m) {
+      m = document.createElement("div");
+      m.id = "item-modal";
+      m.className = "modal";
+      document.body.appendChild(m);
+      m.addEventListener("click", function (e) {
+        if (e.target.closest("[data-close-item]") || e.target.classList.contains("modal-backdrop")) { closeItem(); return; }
+        var o = e.target.closest("[data-open-item]");
+        if (o) { e.preventDefault(); showItem(o.dataset.openItem); }
+      });
+    }
+    showItem(id);
+    m.classList.add("open");
+    document.body.classList.add("modal-lock");
+  }
+  function showItem(id) {
+    var l = findItem(id), m = $("#item-modal");
+    if (!l || !m) return;
+    m.innerHTML = "<div class='modal-backdrop'></div><div class='modal-panel item-panel' role='dialog' aria-modal='true' aria-label='" + esc(l.title) + "'>" +
+      "<div class='ip-top'><button class='ip-back' type='button' data-close-item>" + IP_ICONS.back + "К списку</button><button class='ip-x' type='button' data-close-item aria-label='Закрыть'>×</button></div>" +
+      "<div class='ip'>" + itemMarkup(l, true) + "</div></div>";
+    var panel = $(".modal-panel", m);
+    panel.scrollTop = 0;
+    setTimeout(function () { var x = $(".ip-x", m); if (x) x.focus({ preventScroll: true }); }, 50);
   }
 
   // ---------- тема: светлая / тёмная ----------
@@ -5459,7 +5692,7 @@ var qrcode = function() {
   function closeAuth() {
     var m = $("#auth-modal");
     if (m) m.classList.remove("open");
-    document.body.classList.remove("modal-lock");
+    unlockScroll();
   }
   function initAuth() {
     document.addEventListener("click", function (e) {
@@ -5973,7 +6206,7 @@ var qrcode = function() {
   function listingCard(l) {
     var price = money(l.price) + " / " + l.unit + (l.hourPrice ? " <span class='hour-price'>или " + money(l.hourPrice) + " / час</span>" : "");
     var href = "booking.html?item=" + l.id;
-    return "<div class='listing' data-id='" + l.id + "'><div class='pic " + (l.pic || TYPE_PICS[l.type]) + "'><span class='tag'>" + TYPES[l.type] + "</span>" + favButton(l.id) + "</div><div class='body'><h4>" + esc(l.title) + "</h4><div class='price'>" + price + "</div>" + (l.equip ? "<div class='equip'>" + esc(l.equip) + "</div>" : "") + "<div class='meta'>м. " + l.metro + " (" + l.metroMin + " мин пешком) · " + l.district + "</div><div class='meta'>" + l.area + " м² · " + l.power + " кВт · потолки " + l.ceiling + " м" + (l.people ? " · до " + l.people + " чел." : "") + "</div><a class='btn black' href='" + href + "'>Забронировать</a><button class='view-btn' type='button' data-view='" + l.id + "'><svg viewBox='0 0 24 24' aria-hidden='true'><path d='M4 7a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z'/><path d='M16 3v4'/><path d='M8 3v4'/><path d='M4 11h16'/><path d='M11 15h1'/><path d='M12 15v3'/></svg>Записаться на просмотр</button></div></div>";
+    return "<div class='listing' data-id='" + l.id + "'><div class='pic " + (l.pic || TYPE_PICS[l.type]) + "'><span class='tag'>" + TYPES[l.type] + "</span>" + favButton(l.id) + "</div><div class='body'><h4><a href='#/item?id=" + l.id + "' data-open-item='" + l.id + "'>" + esc(l.title) + "</a></h4><div class='price'>" + price + "</div>" + "<div class='meta'>м. " + l.metro + " (" + l.metroMin + " мин пешком) · " + l.district + "</div><a class='btn black card-open' href='#/item?id=" + l.id + "' data-open-item='" + l.id + "'><svg viewBox='0 0 24 24' aria-hidden='true'><path d='M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0'/><path d='M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6'/></svg>Посмотреть<svg class='arr' viewBox='0 0 24 24' aria-hidden='true'><path d='M5 12h14'/><path d='M13 6l6 6l-6 6'/></svg></a></div></div>";
   }
   function initSearch() {
     var form = $("#search-form");
@@ -6314,6 +6547,7 @@ var qrcode = function() {
     initAccount();
     initSearch();
     initFavorites();
+    initItem();
     initMap();
     initAssistant();
     initSliders();
@@ -6354,6 +6588,19 @@ var qrcode = function() {
       jumpTo(t);
     });
     document.addEventListener("click", function (e) {
+      var o = e.target.closest("[data-open-item]");
+      if (!o || e.target.closest("#item-modal")) return;
+      e.preventDefault();
+      openItem(o.dataset.openItem);
+    });
+    document.addEventListener("click", function (e) {
+      var pic = e.target.closest(".listing[data-id] .pic");
+      if (!pic || e.target.closest("[data-fav]") || e.target.closest("a")) return;
+      var card = pic.closest(".listing");
+      if (card.classList.contains("booking-item")) return;
+      openItem(card.dataset.id);
+    });
+    document.addEventListener("click", function (e) {
       var v = e.target.closest("[data-view]");
       if (!v) return;
       e.preventDefault();
@@ -6369,7 +6616,7 @@ var qrcode = function() {
     // ссылки вида page.html и #якорь работают внутри одного файла
     document.addEventListener("click", function (e) {
       var a = e.target.closest("a[href]");
-      if (!a || a.target === "_blank") return;
+      if (!a || a.target === "_blank" || e.defaultPrevented) return;
       var href = a.getAttribute("href");
       if (href.charAt(0) === "#" && href.indexOf("#/") !== 0) {
         var el = href.length > 1 && document.getElementById(href.slice(1));
@@ -6377,10 +6624,15 @@ var qrcode = function() {
         if (el) jumpTo(el);
         return;
       }
+      if (href.indexOf("#/") === 0) {
+        e.preventDefault();
+        if (href === location.hash) render(); else location.hash = href;
+        return;
+      }
       var h = toHash(href);
       if (h) { e.preventDefault(); go(href); }
     });
-    window.addEventListener("hashchange", render);
+    window.addEventListener("hashchange", function () { window.__ipNav++; render(); });
     render();
   });
 })();
