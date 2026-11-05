@@ -7533,9 +7533,9 @@ var qrcode = function() {
     var popup = $("#map-popup"), hidden = {}, markers = {};
     var map = L.map(box, { zoomControl: true, scrollWheelZoom: true }).setView([55.751, 37.618], 11);
     map.attributionControl.setPrefix("<a href='https://leafletjs.com' target='_blank' rel='noopener'>Leaflet</a>");
-    L.tileLayer("https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png", {
-      maxZoom: 19, subdomains: "abcd", referrerPolicy: "origin",
-      attribution: "&copy; <a href='https://www.openstreetmap.org/copyright' target='_blank' rel='noopener'>участники OpenStreetMap</a> &copy; <a href='https://carto.com/attributions' target='_blank' rel='noopener'>CARTO</a>"
+    L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      maxZoom: 19, referrerPolicy: "origin",
+      attribution: "&copy; <a href='https://www.openstreetmap.org/copyright' target='_blank' rel='noopener'>участники OpenStreetMap</a>"
     }).on("tileerror", function () {
       // подложка не загрузилась (нет интернета или хостинг запрещает внешние картинки) — точки всё равно работают
       var n = $("#map-note");
