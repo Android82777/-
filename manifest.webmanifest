@@ -1,0 +1,23 @@
+{
+  "name": "МосМесто — аренда помещений в Москве",
+  "short_name": "МосМесто",
+  "description": "Единый сервис бронирования помещений в Москве: офисы, склады, залы. Цифровой ключ, поиск рядом, работа без интернета.",
+  "lang": "ru",
+  "start_url": "app.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#090a12",
+  "theme_color": "#090a12",
+  "categories": ["business", "productivity", "lifestyle"],
+  "icons": [
+    {"src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any"},
+    {"src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any"},
+    {"src": "icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable"}
+  ],
+  "shortcuts": [
+    {"name": "Карта рядом", "url": "app.html#near", "icons": [{"src": "icon-192.png", "sizes": "192x192"}]},
+    {"name": "Мои брони", "url": "app.html#books", "icons": [{"src": "icon-192.png", "sizes": "192x192"}]},
+    {"name": "Цифровой ключ", "url": "app.html#key", "icons": [{"src": "icon-192.png", "sizes": "192x192"}]}
+  ]
+}
