@@ -2434,6 +2434,26 @@ body[data-page="item"] .to-top { bottom: 92px; }
 .ap-final .ap-cta{justify-content:center}
 @media (max-width:980px){.ap-hero .wrap,.ap-key{grid-template-columns:1fr}.ap-feats{grid-template-columns:repeat(2,1fr)}.ap-stage{min-height:560px}.ap-key .ap-keywrap{order:-1}}
 @media (max-width:640px){.ap-feats{grid-template-columns:1fr}.ap-phone{--s:.66}.ap-stage{min-height:520px}.ap-float{display:none}.ap-qrbox.desk{display:none}.ap-dl{width:100%;justify-content:center}.ap-ghost{width:100%;justify-content:center}}
+
+.ap-sec-h{margin-bottom:26px}
+.ap-fl{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:0 0 22px}
+.ap-fl button{padding:9px 18px;border-radius:999px;border:1px solid var(--border);background:var(--surface);color:var(--fg);font:inherit;font-size:14.5px;font-weight:600;cursor:pointer;transition:.2s}
+.ap-fl button.on{background:linear-gradient(135deg,#7c6cff,#3f8cff);color:#fff;border-color:transparent;box-shadow:0 8px 20px rgba(88,66,230,.3)}
+.ap-feats{grid-template-columns:repeat(4,1fr);gap:12px}
+.ap-f{display:flex;align-items:center;gap:13px;padding:14px 14px;border-radius:18px;min-height:84px}
+.ap-f:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(60,50,160,.16)}
+.ap-f .ic{flex:none;width:42px;height:42px;border-radius:13px;margin:0;box-shadow:0 6px 14px rgba(0,0,0,.18)}
+.ap-f .ic svg{width:22px;height:22px}
+.ap-f .tx{min-width:0;flex:1}
+.ap-f h3{font-size:15px;line-height:1.25;margin:0 0 3px;padding-right:0}
+.ap-f p{font-size:12.8px;line-height:1.4;opacity:.72}
+.ap-f .tag{right:10px;top:9px;font-size:0;width:8px;height:8px;padding:0;border-radius:50%;background:#7c6cff;box-shadow:0 0 0 4px rgba(124,108,255,.16)}
+.ap-f .tag{display:none}
+.ap-f.new .tag{background:#2fd3a0;box-shadow:0 0 0 4px rgba(47,211,160,.18)}
+.ap-more{display:none;margin:16px auto 0;padding:12px 22px;border-radius:999px;border:1px solid var(--border);background:var(--surface);color:var(--fg);font:inherit;font-weight:600;cursor:pointer}
+@media (max-width:1100px){.ap-feats{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:860px){.ap-feats{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:640px){.ap-feats{grid-template-columns:1fr;gap:10px}.ap-f{min-height:0;padding:12px}}
 @media (prefers-reduced-motion:reduce){.ap-phone,.ap-float,.ap-stage::before{animation:none}}
 </style>
 <link rel="manifest" href="manifest.webmanifest">
@@ -3003,13 +3023,13 @@ if("serviceWorker" in navigator&&location.protocol.indexOf("http")===0){window.a
     <div>
       <span class="ap-badge"><i></i>Новое · МосМесто для телефона</span>
       <h1>Приложение <em>МосМесто</em> — аренда у вас в кармане</h1>
-      <p class="lead">Карта Москвы с ценами, маршрут до помещения, отметка «я на месте», осмотр с фото и работа без интернета. Ставится за 10 секунд прямо из браузера — без магазина приложений.</p>
+      <p class="lead">Карта Москвы с ценами, AI-помощник, вход по отпечатку, маршрут до помещения, осмотр с фото и работа без интернета. Ставится за 10 секунд прямо из браузера — без магазина приложений.</p>
       <div class="ap-cta">
         <button type="button" class="ap-dl" data-ap-install><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg><span data-ap-label>Скачать приложение</span></button>
         <a class="ap-ghost" href="app.html">Открыть в браузере</a>
       </div>
-      <p class="ap-note" data-ap-status>Версия 2.0 · бесплатно · Android, iPhone и компьютер</p>
-      <div class="ap-chips"><span>🗺 Карта</span><span>🛣 Маршрут</span><span>📷 Осмотр</span><span>📴 Офлайн</span></div>
+      <p class="ap-note" data-ap-status>Бесплатно · Android, iPhone и компьютер · без магазина приложений</p>
+      <div class="ap-chips"><span>🗺 Карта</span><span>✨ AI-помощник</span><span>👆 Биометрия</span><span>📷 Осмотр</span><span>📴 Офлайн</span></div>
     </div>
     <div class="ap-stage">
       <div class="ap-phone"><div class="scr"><iframe data-ap-frame title="Демонстрация приложения МосМесто" loading="lazy"></iframe></div></div>
@@ -3019,8 +3039,8 @@ if("serviceWorker" in navigator&&location.protocol.indexOf("http")===0){window.a
 </section>
 <section class="section">
   <div class="wrap">
-    <div class="ap-sec-h"><h2>Только в приложении</h2><p>Функции, которых нет на сайте: они используют возможности вашего телефона.</p></div>
-    <div class="ap-feats"><div class="ap-f"><span class="tag">Эксклюзив</span><div class="ic g2"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4L3 6.500v13.500l6-2.500 6 2.500 6-2.500V4l-6 2.500z"/><path d="M9 4v13.500M15 6.500V20"/></svg></div><h3>Карта с ценами</h3><p>Настоящая карта Москвы: цены на метках, фильтры по типам и кнопка «Где я» с ближайшими помещениями.</p></div><div class="ap-f"><span class="tag">Эксклюзив</span><div class="ic g4"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="18" r="2"/><circle cx="18" cy="6" r="2"/><path d="M8 18h6a3 3 0 0 0 0-6h-4a3 3 0 0 1 0-6h6"/></svg></div><h3>Маршрут на карте</h3><p>Путь до помещения прямо в приложении: время на машине и пешком и подсказка, во сколько выезжать.</p></div><div class="ap-f"><span class="tag">Эксклюзив</span><div class="ic g3"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 21V4M6 5h11l-2 4 2 4H6"/></svg></div><h3>«Я на месте»</h3><p>Рядом с помещением отметьте заезд одним нажатием. Далеко — подскажем, когда выезжать.</p></div><div class="ap-f"><span class="tag">Эксклюзив</span><div class="ic g2"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.500"/></svg></div><h3>Осмотр с фото</h3><p>Чек-лист из 8 пунктов и снимки с камеры. Отчётом можно поделиться, фото хранятся только у вас.</p></div><div class="ap-f"><span class="tag">Новое</span><div class="ic g1"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="3"/><path d="M8 3v4M16 3v4M4 10h16M9 15l2 2 4-4"/></svg></div><h3>Живой календарь и оплата</h3><p>Видно свободные и занятые дни. Оплата картой или по СБП прямо в приложении.</p></div><div class="ap-f"><span class="tag">Новое</span><div class="ic g5"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9 14.500c1 1.500 5 1.500 6 0M9 9.500h.01M15 9.500h.01"/></svg></div><h3>Бонусы и промокоды</h3><p>5% баллами с каждой брони, скидка постоянным клиентам, промокоды и «Акции дня».</p></div><div class="ap-f"><span class="tag">Новое</span><div class="ic g6"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></div><h3>Перенос, отмена, продление</h3><p>Понятные правила возврата: 100% за 24 часа, 50% за 2–24 часа. Продление в два касания.</p></div><div class="ap-f"><span class="tag">Новое</span><div class="ic g4"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2z"/><path d="M9 8h6M9 12h6"/></svg></div><h3>Чек, договор и чат</h3><p>Документы по каждой брони всегда под рукой, а чат поддержки хранит историю обращений.</p></div><div class="ap-f"><span class="tag">Новое</span><div class="ic g3"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.500-7-10a4 4 0 0 1 7-2 4 4 0 0 1 7 2c0 5.500-7 10-7 10z"/></svg></div><h3>Отзывы с фото</h3><p>После аренды оставьте оценку и снимок: отзыв появится в карточке помещения.</p></div><div class="ap-f"><span class="tag">Новое</span><div class="ic g1"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11l8-7 8 7v9H4z"/><path d="M10 20v-6h4v6"/></svg></div><h3>Кабинет арендодателя</h3><p>Календарь занятости, автоуправление ценами, фото и статистика загрузки и выручки.</p></div><div class="ap-f"><span class="tag">Эксклюзив</span><div class="ic g2"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="3" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></div><h3>Голос и «встряхни»</h3><p>Скажите, что ищете, или встряхните телефон — приложение предложит случайное помещение.</p></div><div class="ap-f"><span class="tag">Эксклюзив</span><div class="ic g6"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 9a16 16 0 0 1 20 0M5 13a11 11 0 0 1 14 0M8.500 17a6 6 0 0 1 7 0M12 20.500h.01"/><path d="M3 3l18 18"/></svg></div><h3>Работает офлайн</h3><p>Брони и избранное открываются без сети. Новая версия подтягивается сама.</p></div></div>
+    <div class="ap-sec-h"><h2>Только в приложении</h2><p>Функции, которые используют возможности вашего телефона и работают без лишних шагов.</p></div>
+    <div class="ap-feats"><div class="ap-f"><span class="tag">Эксклюзив</span><div class="ic g1"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 10a2 2 0 0 0-2 2c0 1.020-.1 2.510-.26 4"/><path d="M14 13.120c0 2.380 0 6.380-1 8.880"/><path d="M2 12a10 10 0 0 1 18-6"/><path d="M21.800 16c.2-2 .131-5.354 0-6"/><path d="M5 19.500C5.500 18 6 15 6 12a6 6 0 0 1 .34-2"/><path d="M9 6.800a6 6 0 0 1 9 5.200v2"/></svg></div><div class="tx"><h3>Вход по биометрии</h3><p>Отпечаток или Face ID вместо пароля и блокировка.</p></div></div><div class="ap-f"><span class="tag">Эксклюзив</span><div class="ic g2"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4L3 6v14l6-2 6 2 6-2V4l-6 2z"/><path d="M9 4v14M15 6v14"/></svg></div><div class="tx"><h3>Карта с ценами</h3><p>Метки с ценами, фильтры и кнопка «Где я».</p></div></div><div class="ap-f"><span class="tag">Эксклюзив</span><div class="ic g4"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="18" r="2"/><circle cx="18" cy="6" r="2"/><path d="M8 18h6a3 3 0 0 0 0-6h-4a3 3 0 0 1 0-6h6"/></svg></div><div class="tx"><h3>Маршрут на карте</h3><p>Время в пути и подсказка, когда выезжать.</p></div></div><div class="ap-f"><span class="tag">Эксклюзив</span><div class="ic g3"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 21V4M5 4h11l-2 4 2 4H5"/></svg></div><div class="tx"><h3>«Я на месте»</h3><p>Отметьте заезд одним нажатием у помещения.</p></div></div><div class="ap-f"><span class="tag">Эксклюзив</span><div class="ic g2"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg></div><div class="tx"><h3>Осмотр с фото</h3><p>Чек-лист из 8 пунктов и снимки с камеры.</p></div></div><div class="ap-f"><span class="tag">Эксклюзив</span><div class="ic g6"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="3" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></div><div class="tx"><h3>Голос и «встряхни»</h3><p>Скажите, что ищете, или встряхните телефон.</p></div></div><div class="ap-f"><span class="tag">Эксклюзив</span><div class="ic g4"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 17V11a6 6 0 0 1 12 0v6l2 2H4z"/><path d="M10 21h4"/></svg></div><div class="tx"><h3>Напоминания о брони</h3><p>Напомним заранее: за 15 минут, час, 3 часа или сутки.</p></div></div><div class="ap-f"><span class="tag">Эксклюзив</span><div class="ic g6"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 9a16 16 0 0 1 20 0M5 13a11 11 0 0 1 14 0M8.500 17a6 6 0 0 1 7 0M12 20.500h.01"/><path d="M3 3l18 18"/></svg></div><div class="tx"><h3>Работает офлайн</h3><p>Брони и избранное открываются без сети.</p></div></div></div>
   </div>
 </section>
 <section class="section" style="padding-top:0">
@@ -3041,24 +3061,6 @@ if("serviceWorker" in navigator&&location.protocol.indexOf("http")===0){window.a
     <div class="ap-panel" data-ap-panel="ios"><ol><li>Откройте сайт в Safari</li><li>Нажмите «Поделиться» (квадрат со стрелкой) внизу экрана</li><li>Выберите «На экран “Домой”» и нажмите «Добавить»</li></ol></div>
     <div class="ap-panel" data-ap-panel="pc"><ol><li>Откройте сайт в Chrome или Edge</li><li>Нажмите «Скачать приложение» или значок установки в адресной строке</li><li>Приложение откроется в отдельном окне</li></ol></div>
     <div class="ap-qrbox desk"><div class="q" data-ap-qr="link"></div><p><b>Установить на телефон</b><br>Наведите камеру телефона на QR-код — откроется приложение, а дальше по шагам выше.<small data-ap-url></small></p></div>
-  </div>
-</section>
-<section class="section">
-  <div class="wrap">
-    <div class="ap-sec-h"><h2>Сайт и приложение</h2><p>Приложение дополняет сайт: оплата и оформление остаются на сайте, а удобство — в приложении.</p></div>
-    <div class="ap-tw"><table class="ap-table"><thead><tr><th></th><th>Сайт</th><th class="app">Приложение</th></tr></thead><tbody>
-      <tr><td>Поиск и бронирование</td><td class="y">✓</td><td class="app y">✓</td></tr>
-      <tr><td>Оплата, договор, подписки</td><td class="y">✓</td><td class="app">на сайте</td></tr>
-      <tr><td>Цифровой ключ</td><td class="y">✓</td><td class="app y">✓</td></tr>
-      <tr><td>Поиск рядом по геолокации</td><td class="n">—</td><td class="app y">✓</td></tr>
-      <tr><td>Маршрут внутри приложения</td><td class="n">—</td><td class="app y">✓</td></tr>
-      <tr><td>Отметка «я на месте»</td><td class="n">—</td><td class="app y">✓</td></tr>
-      <tr><td>Осмотр с фото</td><td class="n">—</td><td class="app y">✓</td></tr>
-      <tr><td>Продление брони</td><td class="n">—</td><td class="app y">✓</td></tr>
-      <tr><td>Голосовой поиск и «встряхни»</td><td class="n">—</td><td class="app y">✓</td></tr>
-      <tr><td>Работа без интернета</td><td class="n">—</td><td class="app y">✓</td></tr>
-      <tr><td>Иконка на экране и быстрые действия</td><td class="n">—</td><td class="app y">✓</td></tr>
-    </tbody></table></div>
   </div>
 </section>
 <section class="section hero bg-night ap-final" style="padding:90px 0">
@@ -6664,6 +6666,14 @@ var qrcode = function() {
     }
     tab(ios ? "ios" : android ? "android" : "pc");
     document.querySelectorAll("[data-ap-tab]").forEach(function (b) { b.addEventListener("click", function () { tab(b.dataset.apTab); }); });
+    document.querySelectorAll("[data-ap-fl]").forEach(function (b) { b.addEventListener("click", function () {
+      var v = b.dataset.apFl, box = document.querySelector(".ap-feats");
+      document.querySelectorAll("[data-ap-fl]").forEach(function (x) { x.classList.toggle("on", x === b); });
+      if (box && v !== "all") box.classList.add("open");
+      document.querySelectorAll(".ap-f").forEach(function (f) { var t = f.querySelector(".tag"); f.style.display = (v === "all" || (t && t.textContent === v)) ? "" : "none"; });
+    }); });
+    var apMore = document.querySelector("[data-ap-more]");
+    if (apMore) apMore.addEventListener("click", function () { var box = document.querySelector(".ap-feats"); if (box) box.classList.add("open"); });
     function paint() {
       var st = document.querySelector("[data-ap-status]");
       document.querySelectorAll("[data-ap-label]").forEach(function (l) { l.textContent = standalone() ? "Приложение установлено" : "Скачать приложение"; });
